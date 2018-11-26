@@ -1,5 +1,26 @@
 <h1> Bienvenue sur kittykat, l'e-shop de photos de chats ! </h1>
 
+<ul>
+<% if user_signed_in? %>
+<li>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+</li>
+<li>
+  <%= link_to "Edit Account", edit_user_registration_path%>
+
+  <% else %>
+  <center>
+  <br>
+  <h3> Bonjour étranger, connecte-toi ou inscrit toi stp.</h3>
+  <br>
+    <%= link_to "Sign in", new_user_session_path, class: "btn btn-light"%>
+   
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light" %>
+   </center>
+   
+  <% end %>
+</ul>
+
 <% @item.each do |item| %>
 
 <img src="<%= item.image_url %>"> <br>
