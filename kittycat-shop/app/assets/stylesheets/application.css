@@ -16,4 +16,10 @@
  *= require_all 'lib'
  *= require style.css
  *= require colour-green.css
+ *= require owl.carousel.min
+ *= require owl.theme.min
+ *= require owl.transitions.min
+ *= require bootstrap-theme
+ *= require bootstrap-theme.min
+ *= require bootstrap.min
  */
