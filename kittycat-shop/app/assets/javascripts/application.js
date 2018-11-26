@@ -14,7 +14,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require_all 'lib/js'
+//= require_all 'lib'
 //= require contactform.js
 //= require custom.js
 //= require popper
