@@ -1,0 +1,11 @@
+<h1> Bienvenue sur kittykat, l'e-shop de photos de chats ! </h1>
+
+<% @item.each do |item| %>
+
+<img src="<%= item.image_url %>"> <br>
+<%= item.title %><br>
+<%= item.description %><br>
+<%= item.price %> euros<br>
+<br>
+
+<% end %>
