@@ -21,15 +21,6 @@
   <% end %>
 </ul>
 
-<% @item.each do |item| %>
-
-<img src="<%= item.image_url %>"> <br>
-<%= item.title %><br>
-<%= item.description %><br>
-<%= item.price %> euros<br>
-<a href='/items/<%=item.id%>'>Voir le chaton</a> <br>
-<br>
-<% end %>
 
 
 <body class="page-index has-hero">
