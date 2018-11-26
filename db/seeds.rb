@@ -10,3 +10,8 @@ require 'faker'
 20.times do
   item = Item.create(title: Faker::Cat.name, description: Faker::Cat.breed, price: Faker::Number.decimal(2), image_url: "http://placekitten.com/300/300")
 end
+
+30.times do
+  user = User.create! :email => Faker::Internet.email, :password => 'topsecret', :password_confirmation => 'topsecret'
+
+end
