@@ -4,6 +4,7 @@ class Cart < ApplicationRecord
   has_many :items, through: :cart_items
 
 
+
   def total_price
     tot = 0.00
     cart_items.each do |cart_item|
