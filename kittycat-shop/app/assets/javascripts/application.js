@@ -148,12 +148,7 @@ $(document).ready(function(){
 		});
 	})
 
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> development
 	/* ----  Image Gallery Carousel   ---- */
 	function makeCarousel(el){
 
