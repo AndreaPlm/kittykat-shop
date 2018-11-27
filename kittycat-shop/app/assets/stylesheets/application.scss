@@ -16,6 +16,8 @@
 
  */
 
+@import "components/*";
+
  * { margin: 0px; padding: 0px; }
  body {
  	font-family: "Open Sans", sans-serif;
@@ -25,7 +27,7 @@
  #wrapper{
  	overflow: hidden;
  	height: 1153px;
- 	width: 1643px;
+ 	max-width: 100%;
  	background:#fff;
  }
  #header{
@@ -461,6 +463,15 @@
           -o-transition: all 200ms ease-out;
              transition: all 200ms ease-out;
  }
+
+.view_gallery a{
+  color: white;
+}
+
+.view_gallery a:hover{
+  color: #5ff7d2;
+}
+
  .view_gallery:hover{
  	background:#fff;
  	color:#5ff7d2;

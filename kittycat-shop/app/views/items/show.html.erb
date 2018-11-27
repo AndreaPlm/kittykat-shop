@@ -1,9 +1,13 @@
-<h1><%= Item.find(@id).title%></h1>
-<br>
-<p>
-<%= Item.find(@id).description %>
- <br>
-<%= Item.find(@id).price%>
-<br>
-<img src="<%= Item.find(@id).image_url %>"> <br>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class='show_image'><img src="<%= Item.find(@id).image_url %>"> </div>
+    </div>
+    <div class="col-sm">
+      <h1><%= Item.find(@id).title%></h1>
+      <span class='show_description'><%= Item.find(@id).description %></span><br><br>
+      <span class = 'show_price'><%= Item.find(@id).price%> €</span><br>
+      <button class= 'showcart'>Ajouter au panier</button>
+    </div>
+  </div>
+</div>
