@@ -11,12 +11,61 @@
 
 <div id="header">
 	<ul>
+
+
         <li><a href="">Home</a></li>
+
+<% if user_signed_in? %>
+<li>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+</li>
+<li>
+  <%= link_to "Edit Account", edit_user_registration_path%>
+</li>
+  <% else %>
+  
+ <li>
+    <%= link_to "Sign in", new_user_session_path%>
+</li>
+<li>
+    <%= link_to "Sign up", new_user_registration_path%>
+</li>
+
+  <% end %>
+  
+
         <li><a href="">BRANDS</a></li>
         <li><a href="">DESIGNERS</a></li>
         <li><a href="">CONTACT</a></li>
     </ul>
 </div>
+
+
+  <h2>Basic Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
 
 <div id="sidebar">
 	<h3>CART</h3>
