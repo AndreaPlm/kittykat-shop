@@ -6,4 +6,6 @@ class Item < ApplicationRecord
 
   has_many :join_table_item_carts
   has_many :carts, through: :join_table_item_carts
+
+  has_and_belongs_to_many :orders
 end
