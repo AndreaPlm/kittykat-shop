@@ -71,6 +71,7 @@ $(document).ready(function(){
 		});
 
 		// Flip card to the back side
+
 		$(el).find('.view_gallery').click(function(){
 
 			$(el).find('div.carouselNext, div.carouselPrev').removeClass('visible');
@@ -171,6 +172,8 @@ $(document).ready(function(){
 
 		});
 	})
+
+	
 
 	/* ----  Image Gallery Carousel   ---- */
 	function makeCarousel(el){
