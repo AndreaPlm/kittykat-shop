@@ -24,8 +24,8 @@
  }
  #wrapper{
  	overflow: hidden;
- 	height: 1153px;
- 	width: 1643px;
+ 	height: 100%;
+ 	width: 100%;
  	background:#fff;
  }
  #header{
@@ -51,6 +51,11 @@
  	color:#000;
  	cursor:pointer;
  }
+
+.login-links {
+ float: right !important;
+}
+
  #grid-selector{
  	height: 10px;
  	width: 1291px;
