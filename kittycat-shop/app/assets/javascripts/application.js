@@ -72,7 +72,7 @@ $(document).ready(function(){
 
 		// Flip card to the back side
 
-	
+
 		// Flip card back to the front side
 		$(el).find('.flip-back').click(function(){
 
@@ -148,9 +148,12 @@ $(document).ready(function(){
 		});
 	})
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> development
 	/* ----  Image Gallery Carousel   ---- */
 	function makeCarousel(el){
 
