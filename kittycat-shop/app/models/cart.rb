@@ -33,9 +33,17 @@ class Cart < ApplicationRecord
   def total_price
     tot = 0.00
     cart_items.each do |cart_item|
-      tot += cart_item.item.price.to_f
+      tot += cart_item.item.price.to_f * cart_item.quantity
     end
     return tot
+  end
+
+  def count_items
+    nb_items = 0
+    cart_items.each do |cart_item|
+      nb_items += cart_item.quantity
+    end
+    return nb_items
   end
 
 end
