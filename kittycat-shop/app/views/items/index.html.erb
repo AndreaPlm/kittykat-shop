@@ -8,25 +8,27 @@
            </ul>
        </div>
 
-       Showing <%= @item.length %> results
+       Showing <%= @items.length %> results
 </div>
 
 <div id="grid">
-  <% @item.each do |item| %>
+  <% @items.each do |item| %>
     <div class="product">
       <div class="info-large">
           <h4><%= item.title %></h4>
             <div class="price-big">
               <%= item.price %> €
             </div>
-            <button class="add-cart-large">Add To Cart</button>
+            <!-- <button class="add-cart-large">Add To Cart</button> -->
+            <%= button_to "bite", cart_items_path, :remote => true, class: "add-cart-large" %>
         </div>
         <div class="make3D">
             <div class="product-front">
                 <div class="shadow"></div>
                 <img src="<%= item.image_url %>" alt="" />
                 <div class="image_overlay"></div>
-                <div class="add_to_cart">Add to cart</div>
+                <!-- <div class="add_to_cart">Add to cart</div> -->
+                <%= button_to "bite", {:controller => "carts", :action => "add_item_to_cart"}, :remote => true, class: "add_to_cart" %>
                 <div class="view_gallery"><a href="items/<%=item.id%>">More info</a></div>
                 <div class="stats">
                     <div class="stats-container">
