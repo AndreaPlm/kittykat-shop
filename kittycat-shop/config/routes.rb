@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   # get 'profile', action: :show, controller: 'users'
 
+  resources :charges, only: [:new, :create]
+  
 end
