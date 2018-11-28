@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :carts, only: [:show]
   resources :charges, only: [:new, :create]
+  resources :orders, only: [:show]
 end
