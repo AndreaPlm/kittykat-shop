@@ -16,6 +16,18 @@
 //= require turbolinks
 //= require_tree .
 
+// function to count items in cart
+
+var itemCount = 0;
+
+$('.add').click(function (){
+  itemCount ++;
+  $('#itemCount').html(itemCount).css('background-color', 'red');
+});
+
+
+
+//
 
 $(document).ready(function(){
 
