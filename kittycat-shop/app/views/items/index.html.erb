@@ -1,7 +1,7 @@
 
 <div id="grid-selector">
        <div id="grid-menu">
-       	   View:
+           View:
            <ul>
                <li class="largeGrid"><a href=""></a></li>
                <li class="smallGrid"><a class="active" href=""></a></li>
@@ -14,10 +14,10 @@
 <div id="grid">
   <% @item.each do |item| %>
     <div class="product">
-    	<div class="info-large">
-        	<h4><%= item.title %></h4>
+      <div class="info-large">
+          <h4><%= item.title %></h4>
             <div class="price-big">
-            	<%= item.price %> €
+              <%= item.price %> €
             </div>
             <button class="add-cart-large">Add To Cart</button>
         </div>
