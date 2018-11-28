@@ -16,6 +16,8 @@
 
  */
 
+@import "components/*";
+
  * { margin: 0px; padding: 0px; }
  body {
  	font-family: "Open Sans", sans-serif;
@@ -24,8 +26,8 @@
  }
  #wrapper{
  	overflow: hidden;
- 	height: 100%;
- 	width: 100%;
+ 	height: 1153px;
+ 	max-width: 100%;
  	background:#fff;
  }
  #header{
@@ -51,11 +53,6 @@
  	color:#000;
  	cursor:pointer;
  }
-
-.login-links {
- float: right !important;
-}
-
  #grid-selector{
  	height: 10px;
  	width: 1291px;
@@ -466,6 +463,15 @@
           -o-transition: all 200ms ease-out;
              transition: all 200ms ease-out;
  }
+
+.view_gallery a{
+  color: white;
+}
+
+.view_gallery a:hover{
+  color: #5ff7d2;
+}
+
  .view_gallery:hover{
  	background:#fff;
  	color:#5ff7d2;
