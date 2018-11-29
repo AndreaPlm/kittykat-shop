@@ -53,5 +53,87 @@
 }
 
 .edit-qty {
-
+  width: 50px;
+  margin: 0em 1em;
 }
+
+.form-1 input{
+  border: 1px solid rgb(216, 241, 235);
+}
+
+.edit-qty::placeholder{
+  color: rgb(50, 50, 50);
+  text-align: right;
+}
+
+.remove-button{
+  font-size:12px;
+  text-align: center;
+  margin-right: 1em;
+  border:2px solid #ff8080;
+  background-color: #fff;
+  color:#ff8080;
+  text-align:center;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:0.5em;
+  padding-left: 0.7em;
+  margin-top: 0em;
+  -webkit-transition: all 200ms ease-out;
+        -moz-transition: all 200ms ease-out;
+          -o-transition: all 200ms ease-out;
+             transition: all 200ms ease-out;
+}
+
+.remove-button:hover{
+ background:#ff8080;
+ color:#fff;
+ cursor:pointer;
+}
+
+.save-button input{
+  font-size:12px;
+  text-align: center;
+  border:2px solid #5ff7d2;
+  background-color: #fff;
+  color:#5ff7d2;
+  text-align:center;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:0.5em;
+  padding-left: 0.7em;
+  margin-top: 0em;
+  -webkit-transition: all 200ms ease-out;
+        -moz-transition: all 200ms ease-out;
+          -o-transition: all 200ms ease-out;
+             transition: all 200ms ease-out;
+}
+
+.save-button input:hover{
+ background:#5ff7d2;
+ color:#fff;
+ cursor:pointer;
+}
+
+.checkout-button{
+ font-size:15px;
+ border:2px solid #5ff7d2;
+ background-color: #fff;
+ color:#5ff7d2;
+ text-align:center;
+ text-transform:uppercase;
+ font-weight:700;
+ padding:1em;
+ margin-top: 1em;
+ -webkit-transition: all 200ms ease-out;
+       -moz-transition: all 200ms ease-out;
+         -o-transition: all 200ms ease-out;
+            transition: all 200ms ease-out;
+}
+
+.checkout-button:hover{
+ background:#5ff7d2;
+ color:#fff;
+ cursor:pointer;
+}
+button:focus {outline:0;}
