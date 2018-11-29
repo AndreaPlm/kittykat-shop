@@ -451,6 +451,7 @@
  	font-weight:700;
  	padding:10px 0;
  	opacity:0;
+  background: rgba(0, 0, 0, 0.0);
  	-webkit-transition: all 200ms ease-out;
         -moz-transition: all 200ms ease-out;
           -o-transition: all 200ms ease-out;
@@ -460,6 +461,7 @@
  	background:#fff;
  	color:#5ff7d2;
  	cursor:pointer;
+  text-decoration: underline;
 
  }
  .make3D.animate .add{

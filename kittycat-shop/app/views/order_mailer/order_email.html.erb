@@ -3,24 +3,24 @@
 <p> You just placed an order on KittyCat and we're happy you did.</p>
 <p> Here's what you bought, in case you forgot:</p>
 
-<p>  <table style="width:50%">
+<p>  <<table style="width:50%">
         <tr>
           <th>Image</th>
           <th>Nom</th>
           <th>Prix</th>
         </tr>
 
-        <% @order.items.each do |item| %>
-        <tr>
-          <th><img src="<%= item.image_url %>" class="edit-image"></th>
-          <th><%= item.title %></th>
-          <th>$ <%= item.price%></th>
-        </tr>
-      <% end%>
-      <tr>
-        <th></th>
-        <th>TOTAL :</th>
-        <th>$<%= @order.total_price %></th>
-      </tr>
-      </table><br><br>
-      </p>
+            <% @order.item_orders.each do |item_order| %>
+            <tr>
+              <th><img src="<%= item_order.item.image_url %>" class="edit-image"></th>
+              <th><%= item_order.item.title %></th>
+              <th>$ <%= item_order.item.price%></th>
+              <th><%= item_order.quantity%></th>
+            </tr>
+          <% end%>
+          <tr>
+            <th></th><th></th>
+            <th>TOTAL :</th>
+            <th>$<%= @order.total_price %></th>
+          </tr>
+          </table><br><br>

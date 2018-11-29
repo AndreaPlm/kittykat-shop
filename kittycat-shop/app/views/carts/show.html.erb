@@ -13,7 +13,11 @@
         <% current_user.cart.cart_items.each do |cart_item| %>
         <tr>
             <td class="">
-                <a href="#"><img src="<%= cart_item.item.image_url %>" alt="Product" class="cart-image"></a>
+              <% if cart_item.item.picture.attached? %>
+                   <%= image_tag cart_item.item.picture.variant(resize: "100x100") %>
+                 <% else %>
+               <img src="<%= cart_item.item.image_url %>" alt="" style='width:100px'>
+                <% end %>
             </td>
             <td class=""><%= cart_item.item.title %></td>
             <td class="">$ <%= cart_item.item.price %></td>

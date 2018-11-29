@@ -7,40 +7,42 @@
 
       <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Commandes</a>
+          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Order</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Editer profil</a>
+          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Edit profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Supprimer profil</a>
+          <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Delete profile</a>
         </li>
       </ul>
 
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-          <h3>Mes commandes passées</h3><br>
+          <h3>My past orders</h3><br>
           <% if current_user.orders == [] %>
-             Vous n'avez pas encore passé de commandes !
+             You haven't ordered anything yet!
           <% else %>
               <%current_user.orders.each do |order| %>
               Date : <%= order.created_at %>
               <table style="width:50%">
                   <tr>
                     <th>Image</th>
-                    <th>Nom</th>
-                    <th>Prix</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
                   </tr>
 
-                  <% order.items.each do |item| %>
+                  <% order.item_orders.each do |item_order| %>
                   <tr>
-                    <th><img src="<%= item.image_url %>" class="edit-image"></th>
-                    <th><%= item.title %></th>
-                    <th>$ <%= item.price%></th>
+                    <th><img src="<%= item_order.item.image_url %>" class="edit-image"></th>
+                    <th><%= item_order.item.title %></th>
+                    <th>$ <%= item_order.item.price%></th>
+                    <th><%= item_order.quantity%></th>
                   </tr>
                 <% end%>
                 <tr>
-                  <th></th>
+                  <th></th><th></th>
                   <th>TOTAL :</th>
                   <th>$<%= order.total_price %></th>
                 </tr>
