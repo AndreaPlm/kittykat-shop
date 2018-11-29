@@ -26,13 +26,14 @@
  }
  #wrapper{
  	overflow: hidden;
- 	height: 1153px;
+ 	height: auto;
  	max-width: 100%;
  	background:#fff;
  }
  #header{
  	height:92px;
  	border-bottom:1px solid #eee;
+  position: relative;
  }
  #header ul{padding:33px 0 0 45px;}
  #header li{
@@ -127,6 +128,7 @@
  	padding:13px 0 0 45px;
  	height:1400px;
  	border-right:1px solid #eee;
+  position: relative;
  }
  #sidebar h3{
  	color:#262626;
