@@ -7,7 +7,6 @@
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th>Edit quantity</th>
             <th></th>
         </tr>
         <% current_user.cart.cart_items.each do |cart_item| %>
@@ -21,15 +20,14 @@
             </td>
             <td class=""><%= cart_item.item.title %></td>
             <td class="">$ <%= cart_item.item.price %></td>
-            <td class=""><%= cart_item.quantity %> </td>
-            <td class="">
+            <td class="form-1">
                 <%= form_with(url: cart_item_path(cart_item), method: :patch) do |form| %>
                 <%= form.text_field :quantity, placeholder: "#{cart_item.quantity}", class: "edit-qty"%>
-                <%= form.submit %>
+                <span class= "save-button"><%= form.submit %>
                 <% end %>
             </td>
             <td class="">
-                <%= button_to "Remove", cart_item_path(cart_item), :method=>:delete, :remote => true %>
+                <%= button_to "Remove", cart_item_path(cart_item), :method=>:delete, :remote => true, :class =>"remove-button" %>
             </td>
 
         </tr>
@@ -46,8 +44,7 @@
             <li><strong>Total:</strong> $ <%= current_user.cart.total_price %></li>
         </ul>
         <hr>
-
-        <%=link_to "Go to checkout", new_charge_path, class:"checkout-button"%>
+        <%= button_to "Go to checkout", new_charge_path, :method=>:get, :class =>"checkout-button" %>
     </div>
 </div>
 <!-- ##### Main Content Wrapper End ##### -->

@@ -2,11 +2,12 @@
  <p> An order has been placed on KittyCat. </p>
  <p> information: </p><br>
 
- <p>  <table style="width:50%">
+ <p>  <table style="width:100%">
          <tr>
            <th>Image</th>
-           <th>Nom</th>
-           <th>Prix</th>
+           <th>Name</th>
+           <th>Price</th>
+           <th>qqty</th>
          </tr>
 
              <% @order.item_orders.each do |item_order| %>
@@ -23,7 +24,7 @@
              <th>$<%= @order.total_price %></th>
            </tr>
            </table><br><br>
-        
+
 
 
 </p>
