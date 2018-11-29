@@ -10,15 +10,15 @@ class ItemsController < ApplicationController
    @id = params["id"]
    @item= Item.find(params[:id])
 
-  
+
   end
 
   def update
-  
+
   	 @item= Item.find(params[:id])
   	 @item.picture.attach(params[:item][:picture])
   	 redirect_to "/"
-    
+
   end
  private
 
