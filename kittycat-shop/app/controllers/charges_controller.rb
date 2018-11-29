@@ -1,6 +1,6 @@
 class ChargesController < ApplicationController
-  def new
-end
+
+  before_action :authenticate_user!
 
 def create
   # STRIPE
@@ -38,5 +38,4 @@ def create
         flash[:error] = e.message
         redirect_to new_charge_path
 
-end
 end
