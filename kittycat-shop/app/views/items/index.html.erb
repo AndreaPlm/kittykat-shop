@@ -2,40 +2,33 @@
 
 
 <div id="grid">
-  <div id="grid-selector">
-         <div id="grid-menu">
-             View:
-             <ul>
-                 <li class="largeGrid"><a href=""></a></li>
-                 <li class="smallGrid"><a class="active" href=""></a></li>
-             </ul>
-         </div>
 
-         Showing <%= @items.length %> results
-  </div> <br>
 
-  <% @items.each do |item| %>
+  <% @items.sort.each do |item| %>
+
     <div class="product">
       <div class="info-large">
           <h4><%= item.title %></h4>
             <div class="price-big">
               <%= item.price %> $
             </div>
-            <button class="add">Add To Cart</button>
+            <button class="add" onclick="window.location.href='/';">Add To Cart</button>
         </div>
         <div class="make3D">
             <div class="product-front">
                 <div class="shadow"></div>
+                  <% if item.picture.attached? %>
+                    <%= image_tag item.picture.variant(resize: "300x300") %>
+                  <% else %>
                 <img src="<%= item.image_url %>" alt="" />
+                 <% end %>
                 <div class="image_overlay"></div>
-                <!-- <div class="add">Add to cart</div> -->
-                <%= button_to "bite", {:controller => "carts", :action => "add_item_to_cart"}, :remote => true, class: "add" %>
+                <%= button_to "Add to cart", cart_items_path(:id => item), :remote => true, class: "add", onclick: "window.location.href='/';" %>
                 <div class="view_gallery"><a href="items/<%=item.id%>">More info</a></div>
                 <div class="stats">
                     <div class="stats-container">
                         <span class="product_price"><%= item.price %> $</span>
                         <span class="product_name"><%= item.title %></span>
-
                     </div>
                     </div>
                 </div>

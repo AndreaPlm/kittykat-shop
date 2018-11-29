@@ -1,13 +1,29 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <div class='show_image'><img src="<%= Item.find(@id).image_url %>"> </div>
-    </div>
+        <div class="field">
+      <%= form_for @item do |f| %>
+
+  <%= f.label :picture %>
+  <%= f.file_field :picture %>
+  <%= f.submit %>
+
+<% end %>
+</div>
+
+
+<% if @item.picture.attached? %>
+
+
+
+      <div class='show_image'><%= image_tag @item.picture %> </div>
+
+    <% end %>
     <div class="col-sm">
       <h1><%= Item.find(@id).title%></h1>
       <span class='show_description'><%= Item.find(@id).description %></span><br><br>
       <span class = 'show_price'><%= Item.find(@id).price%> €</span><br>
-      <button class= 'showcart'>Ajouter au panier</button>
+      <%= button_to "Add to cart", cart_items_path(:id => @item), :remote => true, class: "showcart" %>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 
-<div class="modal fade" id="signUpModal">
+<div class="modal" id="signUpModal">
       <div class="modal-dialog">
         <div class="modal-content">
               <div class="modal-header">
@@ -13,7 +13,7 @@
                     <%= devise_error_messages! %>
 
                     <div class="field">
-                    <%= f.label :email %><br />
+                    <%= f.label :email %><br>
                     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
                     </div>
 
@@ -31,6 +31,7 @@
                     </div>
 
                     <div class="actions" onclick="window.location.href='/';">
+
                       <%= f.submit "Sign up", class: 'btn btn-default' %>
                     </div>
 
