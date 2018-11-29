@@ -28,8 +28,7 @@
                 <div class="shadow"></div>
                 <img src="<%= item.image_url %>" alt="" />
                 <div class="image_overlay"></div>
-                <!-- <div class="add">Add to cart</div> -->
-                <%= button_to "bite", {:controller => "carts", :action => "add_item_to_cart"}, :remote => true, class: "add" %>
+                <%= button_to "Add to cart", cart_items_path(:item_id => item), :remote => true, class: "add" %>
                 <div class="view_gallery"><a href="items/<%=item.id%>">More info</a></div>
                 <div class="stats">
                     <div class="stats-container">
