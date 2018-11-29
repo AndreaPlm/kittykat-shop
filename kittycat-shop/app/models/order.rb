@@ -5,8 +5,8 @@ class Order < ApplicationRecord
 
   def total_price()
     tot = 0.00
-    items.each do |item|
-      tot += item.price.to_d
+    item_orders.each do |item_order|
+      tot += item_order.item.price.to_d * item_order.quantity
     end
     return tot
   end
