@@ -10,7 +10,7 @@
           <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Order</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Edit profils</a>
+          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Edit profile</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Delete profile</a>
@@ -30,7 +30,7 @@
                     <th>Image</th>
                     <th>Name</th>
                     <th>Price</th>
-                    <th>Quantity/th>
+                    <th>Quantity</th>
                   </tr>
 
                   <% order.item_orders.each do |item_order| %>
@@ -42,7 +42,7 @@
                   </tr>
                 <% end%>
                 <tr>
-                  <th></th>
+                  <th></th><th></th>
                   <th>TOTAL :</th>
                   <th>$<%= order.total_price %></th>
                 </tr>
