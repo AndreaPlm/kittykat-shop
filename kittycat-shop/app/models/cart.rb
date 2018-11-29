@@ -4,21 +4,6 @@ class Cart < ApplicationRecord
   has_many :cart_items
   has_many :items, through: :cart_items
 
-  def add_item(item)
-    cart_item = cart_items.find_by(item_id: item.id) #check if item exist in cart
-    if cart_item
-      cart_item.quantity += 1
-      cart_item.save
-    else
-      items << item
-    end
-  end
-
-  def remove_item(cart_item)
-    cart_item.quantity = 0
-    cart_item.save
-  end
-
   def add_one(cart_item)
     cart_item.quantity += 1
     cart_item.save
