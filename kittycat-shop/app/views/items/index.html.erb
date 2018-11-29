@@ -12,7 +12,9 @@
 </div>
 
 <div id="grid">
-  <% @item.each do |item| %>
+
+
+  <% @item.sort.each do |item| %>
     <div class="product">
       <div class="info-large">
           <h4><%= item.title %></h4>
@@ -24,7 +26,11 @@
         <div class="make3D">
             <div class="product-front">
                 <div class="shadow"></div>
+                  <% if item.picture.attached? %>
+                    <%= image_tag item.picture.variant(resize: "300x300") %>
+                  <% else %> 
                 <img src="<%= item.image_url %>" alt="" />
+                 <% end %>
                 <div class="image_overlay"></div>
                 <div class="add_to_cart">Add to cart</div>
                 <div class="view_gallery"><a href="items/<%=item.id%>">More info</a></div>
@@ -41,9 +47,12 @@
                 <div class="shadow"></div>
                 <div class="carousel">
                     <ul class="carousel-container">
+                  
+                    
                         <li><img src="<%= item.image_url %>" alt="" /></li>
                         <li><img src="<%= item.image_url %>" alt="" /></li>
                         <li><img src="<%= item.image_url %>" alt="" /></li>
+                    
                     </ul>
                     <div class="arrows-perspective">
                         <div class="carouselPrev">
