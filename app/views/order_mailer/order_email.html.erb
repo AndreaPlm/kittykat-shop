@@ -1,0 +1,27 @@
+<h1> Hey ! Thanks for your order. </h1><br>
+
+<p> You just placed an order on KittyCat and we're happy you did.</p>
+<p> Here's what you bought, in case you forgot:</p>
+
+<p>  <<table style="width:100%">
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>qqt</th>
+        </tr>
+
+            <% @order.item_orders.each do |item_order| %>
+            <tr>
+              <th><img src="<%= item_order.item.image_url %>" class="edit-image"></th>
+              <th><%= item_order.item.title %></th>
+              <th>$ <%= item_order.item.price%></th>
+              <th><%= item_order.quantity%></th>
+            </tr>
+          <% end%>
+          <tr>
+            <th></th><th></th>
+            <th>TOTAL :</th>
+            <th>$<%= @order.total_price %></th>
+          </tr>
+          </table><br><br>
