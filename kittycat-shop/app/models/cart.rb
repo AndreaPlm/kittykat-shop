@@ -4,11 +4,6 @@ class Cart < ApplicationRecord
   has_many :cart_items
   has_many :items, through: :cart_items
 
-  def remove_item(cart_item)
-    cart_item.quantity = 0
-    cart_item.save
-  end
-
   def add_one(cart_item)
     cart_item.quantity += 1
     cart_item.save

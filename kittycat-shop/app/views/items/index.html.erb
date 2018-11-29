@@ -30,11 +30,11 @@
                 <div class="shadow"></div>
                   <% if item.picture.attached? %>
                     <%= image_tag item.picture.variant(resize: "300x300") %>
-                  <% else %> 
+                  <% else %>
                 <img src="<%= item.image_url %>" alt="" />
                  <% end %>
                 <div class="image_overlay"></div>
-                <%= button_to "Add to cart", cart_items_path(:item_id => item), :remote => true, class: "add" %>
+                <%= button_to "Add to cart", cart_items_path(:id => item), :remote => true, class: "add" %>
                 <div class="view_gallery"><a href="items/<%=item.id%>">More info</a></div>
                 <div class="stats">
                     <div class="stats-container">

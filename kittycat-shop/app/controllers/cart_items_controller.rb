@@ -2,7 +2,7 @@ class CartItemsController < ApplicationController
 
   def create()
     @user = current_user
-    item = Item.find(params[:item_id])
+    item = Item.find(params[:id])
     cart_item = @user.cart.cart_items.find_by(item_id: item.id) #check if item exist in cart
     if cart_item
       puts "le cart_item exist, je vais augmenter la quantité de 1"

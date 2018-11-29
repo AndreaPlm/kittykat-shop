@@ -42,7 +42,7 @@
                                         </td>
                                         <td class="qty">
                                             <span>
-                                              <%= button_to "Remove", cart_item_path(cart_item), :method=>:delete, :remote => true %>
+                                              <%= button_to "Remove", cart_item_path(:id => cart_item), :method=>:delete, :remote => true %>
                                             </span>
                                         </td>
 
