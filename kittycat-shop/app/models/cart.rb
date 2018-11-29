@@ -5,8 +5,7 @@ class Cart < ApplicationRecord
   has_many :items, through: :cart_items
 
   def add_item(item)
-    id = item.id
-    cart_item = cart_items.find_by(item_id: id)
+    cart_item = cart_items.find_by(item_id: item.id) #check if item exist in cart
     if cart_item
       cart_item.quantity += 1
       cart_item.save

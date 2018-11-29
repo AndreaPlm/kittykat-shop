@@ -1,8 +1,15 @@
 class CartItemsController < ApplicationController
 
-  def update()
-    puts "in update"
+  def create()
     puts "params : #{params}"
+    c = CartItem.new
+    c.cart = current_user.cart
+    c.item = Item.find(params[:format])
+    c.save
+    redirect_to root_path
+  end
+
+  def update()
     cart_item = CartItem.find(params[:id])
     cart_item.quantity = params[:quantity]
     cart_item.save
@@ -14,11 +21,5 @@ class CartItemsController < ApplicationController
     cart_item.destroy
     redirect_to cart_path
   end
-
-  def cart_item_params
-    params.require(:cart_item).permit(:quantity)
-  end
-
-
 
 end

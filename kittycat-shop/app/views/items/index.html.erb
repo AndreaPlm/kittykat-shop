@@ -11,10 +11,10 @@
              </ul>
          </div>
 
-         Showing <%= @item.length %> results
+         Showing <%= @items.length %> results
   </div> <br>
 
-  <% @item.each do |item| %>
+  <% @items.each do |item| %>
     <div class="product">
       <div class="info-large">
           <h4><%= item.title %></h4>
@@ -28,7 +28,8 @@
                 <div class="shadow"></div>
                 <img src="<%= item.image_url %>" alt="" />
                 <div class="image_overlay"></div>
-                <div class="add">Add to cart</div>
+                <!-- <div class="add">Add to cart</div> -->
+                <%= button_to "bite", {:controller => "carts", :action => "add_item_to_cart"}, :remote => true, class: "add" %>
                 <div class="view_gallery"><a href="items/<%=item.id%>">More info</a></div>
                 <div class="stats">
                     <div class="stats-container">
