@@ -10,10 +10,9 @@
 * Ruby 2.5.1 - Rails 5.2.1
 * **To use locally** : `$ git clone`, `$ bundle install`, `$ rails db:create`, `$ rails db:migrate`, then run localhost:3000 on your browser
 * **To test admin features** (like uploading dick pics instead of cat pics 🙀), use user : admin@admin.com, password : azertyu
-
-### Features
 <br>
 
+### Features
  1. **User** : sign in, log in, log out, edit info, delete account, access past orders. There is also an admin class.
  
  2. **Cart** : add items to cart, change item quantity
