@@ -1,66 +1,43 @@
 
-<div id="grid-selector">
-       <div id="grid-menu">
-           View:
-           <ul>
-               <li class="largeGrid"><a href=""></a></li>
-               <li class="smallGrid"><a class="active" href=""></a></li>
-           </ul>
-       </div>
 
-       Showing <%= @items.length %> results
-</div>
 
 <div id="grid">
+  <div id="grid-selector">
+         <div id="grid-menu">
+             View:
+             <ul>
+                 <li class="largeGrid"><a href=""></a></li>
+                 <li class="smallGrid"><a class="active" href=""></a></li>
+             </ul>
+         </div>
+
+         Showing <%= @items.length %> results
+  </div> <br>
+
   <% @items.each do |item| %>
     <div class="product">
       <div class="info-large">
           <h4><%= item.title %></h4>
             <div class="price-big">
-              <%= item.price %> €
+              <%= item.price %> $
             </div>
-            <!-- <button class="add-cart-large">Add To Cart</button> -->
-            <%= button_to "bite", cart_items_path, :remote => true, class: "add-cart-large" %>
+            <button class="add">Add To Cart</button>
         </div>
         <div class="make3D">
             <div class="product-front">
                 <div class="shadow"></div>
                 <img src="<%= item.image_url %>" alt="" />
                 <div class="image_overlay"></div>
-                <!-- <div class="add_to_cart">Add to cart</div> -->
-                <%= button_to "bite", {:controller => "carts", :action => "add_item_to_cart"}, :remote => true, class: "add_to_cart" %>
+                <!-- <div class="add">Add to cart</div> -->
+                <%= button_to "bite", {:controller => "carts", :action => "add_item_to_cart"}, :remote => true, class: "add" %>
                 <div class="view_gallery"><a href="items/<%=item.id%>">More info</a></div>
                 <div class="stats">
                     <div class="stats-container">
-                        <span class="product_price"><%= item.price %> €</span>
+                        <span class="product_price"><%= item.price %> $</span>
                         <span class="product_name"><%= item.title %></span>
-                    </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="product-back">
-                <div class="shadow"></div>
-                <div class="carousel">
-                    <ul class="carousel-container">
-                        <li><img src="<%= item.image_url %>" alt="" /></li>
-                        <li><img src="<%= item.image_url %>" alt="" /></li>
-                        <li><img src="<%= item.image_url %>" alt="" /></li>
-                    </ul>
-                    <div class="arrows-perspective">
-                        <div class="carouselPrev">
-                            <div class="y"></div>
-                            <div class="x"></div>
-                        </div>
-                        <div class="carouselNext">
-                            <div class="y"></div>
-                            <div class="x"></div>
-                        </div>
                     </div>
-                </div>
-                <div class="flip-back">
-                    <div class="cy"></div>
-                    <div class="cx"></div>
+                    </div>
                 </div>
             </div>
         </div>
