@@ -80,20 +80,6 @@ ActiveRecord::Schema.define(version: 2018_11_29_154506) do
     t.index ["breed_id"], name: "index_items_on_breed_id"
   end
 
-  create_table "items_orders", id: false, force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "order_id", null: false
-  end
-
-  create_table "join_table_item_carts", force: :cascade do |t|
-    t.bigint "cart_id"
-    t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_join_table_item_carts_on_cart_id"
-    t.index ["item_id"], name: "index_join_table_item_carts_on_item_id"
-  end
-
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
