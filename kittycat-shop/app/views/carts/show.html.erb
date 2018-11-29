@@ -1,44 +1,49 @@
 <div class= "cart-wrapper">
-    <h2>Shopping Cart</h2>
+    <h2 class="headline">Shopping Cart</h2>
 
     <table class= "cart-table">
-        <tr>
+        <tr class="table-categories">
             <th></th>
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Edit quantity</th>
+            <th></th>
         </tr>
         <% current_user.cart.cart_items.each do |cart_item| %>
         <tr>
-            <td class="cart_product_img">
+            <td class="">
                 <a href="#"><img src="<%= cart_item.item.image_url %>" alt="Product" class="cart-image"></a>
             </td>
-            <td class="cart_product_desc"><h5><%= cart_item.item.title %></h5></td>
-            <td class="price"><%= cart_item.item.price %></td>
-            <td class="qty"><%= cart_item.quantity %> </td>
-            <td class="qty">
+            <td class=""><%= cart_item.item.title %></td>
+            <td class="">$ <%= cart_item.item.price %></td>
+            <td class=""><%= cart_item.quantity %> </td>
+            <td class="">
                 <%= form_with(url: cart_item_path(cart_item), method: :patch) do |form| %>
-                <%= form.text_field :quantity, placeholder: "#{cart_item.quantity}" %>
+                <%= form.text_field :quantity, placeholder: "#{cart_item.quantity}", class: "edit-qty"%>
                 <%= form.submit %>
                 <% end %>
             </td>
-            <td class="qty">
+            <td class="">
                 <%= button_to "Remove", cart_item_path(cart_item), :method=>:delete, :remote => true %>
             </td>
 
         </tr>
         <% end %>
     </table>
+
     <div class="summary-card">
         <h5>Cart Total</h5>
+        <hr>
         <ul>
-            <li>Subtotal: $<%= current_user.cart.total_price %></li>
-            <li>Delivery: Free</li>
-            <li>Total:$<%= current_user.cart.total_price %></li>
+            <li><strong>Subtotal:</strong> $ <%= current_user.cart.total_price %></li>
+            <li><strong>Delivery:</strong> Free</li>
+            <hr>
+            <li><strong>Total:</strong> $ <%= current_user.cart.total_price %></li>
         </ul>
+        <hr>
 
-        <%=link_to "Aller au paiement", new_charge_path, class:"checkout-button"%>
+        <%=link_to "Go to checkout", new_charge_path, class:"checkout-button"%>
     </div>
 </div>
 <!-- ##### Main Content Wrapper End ##### -->

@@ -1,20 +1,39 @@
 
 
-h2 {
-  margin-top: 50px;
-  margin-bottom: 50px;
+.headline {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 .cart-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  text-align: center;
 
 }
 
 
 .cart-table {
-  width: 100%;
+  width: auto;
+  border: none;
+}
+
+.cart-table th {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.cart-table tr {
+  background-color: white;
+}
+
+.table-categories {
+
+
 }
 
 .cart-image {
@@ -25,8 +44,14 @@ h2 {
 .summary-card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+  padding: 35px;
+  position: relative;
 }
 
 .summary-card li {
   list-style-type: none;
+}
+
+.edit-qty {
+
 }
