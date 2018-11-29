@@ -30,7 +30,7 @@
                     <th>Image</th>
                     <th>Name</th>
                     <th>Price</th>
-                    <th>Quantity/th>
+                    <th>Quantity</th>
                   </tr>
 
                   <% order.item_orders.each do |item_order| %>
@@ -42,7 +42,7 @@
                   </tr>
                 <% end%>
                 <tr>
-                  <th></th>
+                  <th></th><th></th>
                   <th>TOTAL :</th>
                   <th>$<%= order.total_price %></th>
                 </tr>
