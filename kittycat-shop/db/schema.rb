@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_142754) do
+ActiveRecord::Schema.define(version: 2018_11_29_154506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,20 +94,6 @@ ActiveRecord::Schema.define(version: 2018_11_29_142754) do
     t.index ["item_id"], name: "index_join_table_item_carts_on_item_id"
   end
 
-  create_table "items_orders", id: false, force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "order_id", null: false
-  end
-
-  create_table "join_table_item_carts", force: :cascade do |t|
-    t.bigint "cart_id"
-    t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_join_table_item_carts_on_cart_id"
-    t.index ["item_id"], name: "index_join_table_item_carts_on_item_id"
-  end
-
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -123,6 +109,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_142754) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
