@@ -3,17 +3,6 @@
 
 <div id="grid">
 
-  <div id="grid-selector">
-         <div id="grid-menu">
-             View:
-             <ul>
-                 <li class="largeGrid"><a href=""></a></li>
-                 <li class="smallGrid"><a class="active" href=""></a></li>
-             </ul>
-         </div>
-
-         Showing <%= @items.length %> results
-  </div> <br>
 
   <% @items.sort.each do |item| %>
 
@@ -23,7 +12,7 @@
             <div class="price-big">
               <%= item.price %> $
             </div>
-            <button class="add">Add To Cart</button>
+            <button class="add" onclick="window.location.href='/';">Add To Cart</button>
         </div>
         <div class="make3D">
             <div class="product-front">
@@ -34,7 +23,7 @@
                 <img src="<%= item.image_url %>" alt="" />
                  <% end %>
                 <div class="image_overlay"></div>
-                <%= button_to "Add to cart", cart_items_path(:id => item), :remote => true, class: "add" %>
+                <%= button_to "Add to cart", cart_items_path(:id => item), :remote => true, class: "add", onclick: "window.location.href='/';" %>
                 <div class="view_gallery"><a href="items/<%=item.id%>">More info</a></div>
                 <div class="stats">
                     <div class="stats-container">

@@ -9,9 +9,10 @@ class Item < ApplicationRecord
   has_many :carts, through: :cart_items
 
   has_one_attached :picture
-  
+
 
   has_many :orders, through: :item_orders
+  belongs_to :breed
 
 
 end
