@@ -4,7 +4,7 @@
         <li><a href="">CONTACT</a></li>
 
 			<% if user_signed_in? %>
-				<li style="float:right;"><div id="itemCount"><%=  %> </div></li>
+				<li style="float:right;"><div id="itemCount"><%= current_user.cart.count_items %> </div></li>
 				<li style="float:right;"><a href="<%= cart_path(current_user.cart.id) %>"><img src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Shopping-Cart-icon.png" class="cart-icon"></a></li>
         <li class="login-links" style="float:right;"><%= current_user.email %></li>
         <li class="login-links" style="float:right;"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
