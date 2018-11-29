@@ -72,11 +72,6 @@ ActiveRecord::Schema.define(version: 2018_11_28_161153) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "items_orders", id: false, force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "order_id", null: false
-  end
-
   create_table "join_table_item_carts", force: :cascade do |t|
     t.bigint "cart_id"
     t.bigint "item_id"
