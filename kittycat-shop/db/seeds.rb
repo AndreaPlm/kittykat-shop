@@ -15,10 +15,10 @@ end
   item = Item.create(title: Faker::Cat.name, breed_id: rand(1..10), description: Faker::Lorem.paragraph(10), price: Faker::Number.decimal(2), image_url: "http://placekitten.com/300/300")
 end
 
-20.times do
-  user = User.create(email: Faker::Internet.email, password: Faker::Color.color_name)
-end
+#20.times do
+#  user = User.create(email: Faker::Internet.email, password: Faker::Color.color_name)
+#end
 
-20.times do
-  order = Order.create(user_id: rand(1..20))
-end
+#20.times do
+#  order = Order.create(user_id: rand(1..20))
+#end
